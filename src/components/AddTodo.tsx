@@ -10,6 +10,8 @@ export function AddTodo() {
   function handleNewTodo(e: FormEvent) {
     e.preventDefault();
 
+    if (!newTodo) return
+
     dispatch(add(newTodo));
     setNewTodo("");
   }
