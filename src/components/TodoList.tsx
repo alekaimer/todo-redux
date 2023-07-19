@@ -1,9 +1,15 @@
+import { useSelector } from "react-redux";
+
 export function TodoList() {
+  const todos = useSelector((state) => {
+    return state.todo;
+  });
+
   return (
     <ul>
-      <li>Fazer café</li>
-      <li>Limpar a geladeira</li>
-      <li>Estudar Redux</li>
+      {todos.map((todo) => (
+        <li key={todo}>{todo}</li>
+      ))}
     </ul>
   );
 }
