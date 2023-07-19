@@ -10,7 +10,7 @@ export function TodoList() {
     <ul>
       {todos.map((todo) => (
         <li key={todo}>
-          {todo} 
+          {todo}{' '}
           <RemoveTodo todo={todo} />
         </li>
       ))}

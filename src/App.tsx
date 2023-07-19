@@ -7,8 +7,8 @@ import { store } from "./store";
 export function App() {
   return (
     <Provider store={store}>
-      <TodoList />
       <AddTodo />
+      <TodoList />
     </Provider>
   );
 }
