@@ -12,6 +12,10 @@ const todoSlice = createSlice({
     add: (state, action: Payload) => {
       state.push(action.payload);
     },
+    remove: (state, action: Payload) => {
+      const todoIndex = state.indexOf(action.payload);
+      state.splice(todoIndex, 1);
+    },
   },
 });
 
@@ -21,7 +25,7 @@ export const store = configureStore({
   },
 });
 
-export const { add } = todoSlice.actions;
+export const { add, remove } = todoSlice.actions;
 
 export type RootState = ReturnType<typeof store.getState>;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
